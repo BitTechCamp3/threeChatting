@@ -17,9 +17,9 @@ public class ChatConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-
+        // subscribe할 때 사용할 url
         registry.enableSimpleBroker("/queue", "/topic");
-
+        // publish할 때 사용할 url
         registry.setApplicationDestinationPrefixes("/app");
     }
 }

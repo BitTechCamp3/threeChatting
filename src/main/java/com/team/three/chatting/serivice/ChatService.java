@@ -31,6 +31,10 @@ public class ChatService {
 
     //채팅방 하나 불러오기
     public ChatRoom findById(String roomId) {
+        ChatRoom chatRoom = ChatRoom.create(roomId);
+        if(null == chatRooms.getOrDefault("name", null)) {
+            chatRooms.put(roomId, chatRoom);
+        }
         return chatRooms.get(roomId);
     }
 
