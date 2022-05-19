@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:8080",allowedHeaders = "*")
 public class MessageController {
     private final SimpMessageSendingOperations sendingOperations;
 
