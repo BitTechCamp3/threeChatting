@@ -21,7 +21,7 @@ public class ChatRoom {
         room.roomName = name;
 
         RandomString rs = new RandomString(10);
-        room.sender = "익명" + rs;
+        room.sender = "익명" + rs.nextString();
         return room;
     }
 }

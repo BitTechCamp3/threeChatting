@@ -15,6 +15,7 @@ import java.util.Random;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/chat")
+@CrossOrigin(origins = "http://ec2-43-200-3-180.ap-northeast-2.compute.amazonaws.com")
 public class ChatRoomController {
     private final ChatService chattingService;
 
