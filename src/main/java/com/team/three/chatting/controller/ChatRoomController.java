@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -40,8 +41,9 @@ public class ChatRoomController {
     // 채팅방 생성 및 생성되어 있다면 입장.
     @PostMapping("/room/enter")
     @ResponseBody
-    public ChatRoom enterRoom(@RequestParam String name) {
-        return chattingService.createOrEnterRoom(name);
+    public ChatRoom enterRoom(@RequestBody HashMap<String, Object> param) {
+        System.out.println(param.get("name").toString());
+        return chattingService.createOrEnterRoom(param.get("name").toString());
     }
 
     // 채팅방 입장 화면
