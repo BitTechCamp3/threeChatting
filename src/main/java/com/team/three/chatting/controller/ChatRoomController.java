@@ -15,6 +15,7 @@ import java.util.Random;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/chat")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ChatRoomController {
     private final ChatService chattingService;
 
