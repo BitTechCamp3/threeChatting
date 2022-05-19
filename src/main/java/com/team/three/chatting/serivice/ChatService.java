@@ -8,11 +8,10 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.*;
 
-@Service
 @Slf4j
 @RequiredArgsConstructor
+@Service
 public class ChatService {
-
     private Map<String, ChatRoom> chatRooms;
 
     @PostConstruct
@@ -41,4 +40,15 @@ public class ChatService {
         chatRooms.put(chatRoom.getRoomId(), chatRoom);
         return chatRoom;
     }
+
+    //채팅방 생성 및 생성되어 있다면 입장.
+    public ChatRoom createOrEnterRoom(String name) {
+        ChatRoom chatRoom = ChatRoom.create(name);
+        if(null == chatRooms.getOrDefault("name", null)) {
+            chatRooms.put(chatRoom.getRoomId(), chatRoom);
+        }
+        return chatRoom;
+    }
 }
+
+

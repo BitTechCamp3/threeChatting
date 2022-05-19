@@ -13,7 +13,7 @@ public class ChatRoom {
 
     public static ChatRoom create(String name) {
         ChatRoom room = new ChatRoom();
-        room.roomId = UUID.randomUUID().toString();
+        room.roomId = name;
         room.roomName = name;
         return room;
     }
