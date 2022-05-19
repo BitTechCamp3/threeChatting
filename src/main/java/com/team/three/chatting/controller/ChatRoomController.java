@@ -15,6 +15,7 @@ import java.util.Random;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/chat")
+@CrossOrigin(origins = "http://localhost:8085",allowedHeaders = "*")
 public class ChatRoomController {
     private final ChatService chattingService;
 
@@ -42,7 +43,6 @@ public class ChatRoomController {
     @PostMapping("/room/enter")
     @ResponseBody
     public ChatRoom enterRoom(@RequestBody HashMap<String, Object> param) {
-        System.out.println(param.get("name").toString());
         return chattingService.createOrEnterRoom(param.get("name").toString());
     }
 
